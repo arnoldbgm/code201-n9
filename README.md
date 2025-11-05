@@ -1,7 +1,3 @@
-Aquí tienes una versión más didáctica y ampliada de tu guía de CSS, con explicaciones adicionales y emojis para hacerla más amena 🎨👩‍💻. Si quieres, la preparo también como **diapositiva** o **pdf para tus alumnos**.
-
----
-
 # Guía Completa de CSS para Principiantes
 
 ## ¿Qué es CSS?
@@ -252,12 +248,3 @@ Cada elemento HTML actúa como una “caja” que comprende las siguientes capas
 * [W3Schools – CSS Rounded Corners (`border-radius`)](https://www.w3schools.com/css/css3_borders.asp) ([w3schools.com][6])
 
 ---
-
-Si quieres, preparo **ejercicios prácticos** para que tus alumnos los resuelvan al final de la clase (por ejemplo: “Diseña una tarjeta con imagen de fondo, borde redondeado, margen y relleno específicos”) — ¿te parece bien que lo haga?
-
-[1]: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius?utm_source=chatgpt.com "border-radius - CSS - MDN Web Docs - Mozilla"
-[2]: https://www.w3schools.com/css/css_boxmodel.asp?utm_source=chatgpt.com "CSS Box Model - W3Schools"
-[3]: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model?utm_source=chatgpt.com "The box model - Learn web development | MDN"
-[4]: https://blog.hubspot.com/website/css-margin-vs-padding?utm_source=chatgpt.com "CSS Margin vs. Padding: What's the Difference? - HubSpot Blog"
-[5]: https://www.reddit.com/r/Frontend/comments/1d8619e/cant_really_understand_when_to_use_margin_padding/?utm_source=chatgpt.com "Cant really understand when to use margin, padding or border."
-[6]: https://www.w3schools.com/css/css3_borders.asp?utm_source=chatgpt.com "CSS Rounded Corners - W3Schools"
