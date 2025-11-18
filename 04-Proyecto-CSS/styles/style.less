@@ -11,26 +11,31 @@ header {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   .logo{
+
+   .logo {
       display: flex;
       gap: 16px;
       align-items: center;
-      img{
+
+      img {
          width: 16px;
          height: 16px;
       }
    }
+
    nav {
       display: flex;
       gap: 32px;
       align-items: center;
+
       ul {
          display: flex;
          list-style: none;
          /*Lograr quitar estilos*/
          gap: 36px;
-         li{
-            a{
+
+         li {
+            a {
                text-decoration: none;
                color: #000;
                font-weight: 600;
@@ -52,16 +57,24 @@ header {
       color: #fff;
    }
 
+   &.btn-primario:hover{
+      cursor: pointer;
+      background-color: rebeccapurple;
+      transition: 0.4s;
+   }
+
    &.btn-secundario {
       background-color: #F5F2F0;
    }
 }
 
-main{
+main {
    border: 1px solid blue;
    width: 960px;
-   margin: 0 auto; /*Centrar vertical*/
-   .hero-section{
+   margin: 0 auto;
+
+   /*Centrar vertical*/
+   .hero-section {
       height: 512px;
       background-image: url("../assets/hero_section.png");
       background-size: cover;
@@ -71,23 +84,77 @@ main{
       align-items: center;
       justify-content: center;
       gap: 16px;
-      h2{
+
+      h2 {
          font-size: 48px;
          color: #fff;
       }
-      p{
+
+      p {
          text-align: center;
          color: #fff;
       }
    }
-   .novedades{
+
+   .novedades {
       display: flex;
       gap: 12px;
       justify-content: center;
-      article{
+
+      article {
          width: 223px;
-         img{
+
+         img {
             width: 100%;
+         }
+      }
+   }
+
+   .mas-vendidos {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+
+      article {
+         img {
+            width: 100%;
+         }
+
+         h4 {
+            margin-top: 16px;
+            margin-bottom: 6px;
+         }
+      }
+   }
+
+   .suscribirse {
+      border: 1px solid purple;
+      height: 333px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 8px;
+      h3{
+         font-size: 36px;
+      }
+      .contenedor-subs{
+         border-radius: 8px;
+         width: 480px;
+         height: 64px;
+         padding: 8px;
+         background-color: #F5F2F0;
+         display: flex;
+         justify-content: space-between;
+         .inpt-email{
+            width: 100%;
+            border: none;
+            padding-left: 16px;
+            font-size: 16px;
+            background-color: transparent;
+         }
+         .inpt-email:focus-visible{
+            outline: none;
          }
       }
    }
