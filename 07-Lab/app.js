@@ -50,6 +50,6 @@ function operacionBilletera(tipoOperacion) {
       tipo: tipoOperacion
    }
    billetera.push(operacion);
-   alert("Retiro realizado correctamente");
+   alert("Operacion realizado correctamente");
    console.log(billetera)
 }
