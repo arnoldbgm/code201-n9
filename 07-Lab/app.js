@@ -14,38 +14,11 @@ let opcion = prompt(`¿Cual es la operacion que vas a realizar?
 
 while (opcion !== "0") {
    if (opcion == "1") {
-      // Todo el codigo a ejecutar si la opcion es 1 => Ingreso
-      let descripcionIngreso = prompt("¿Cual es la descripcion del ingreso?");
-      let montoIngreso = Number(prompt("¿Cual es el monto a ingresar?"));
-
-      // Objeto literal
-      const ingreso = {
-         descripcion: descripcionIngreso,
-         monto: montoIngreso,
-         tipo: "ingreso"
-      }
-      // Push propiedad para insertar un nuevo elemento al array
-      // Se inserta al final del array
-      billetera.push(ingreso);
-      alert("Ingreso realizado correctamente");
-      console.log(billetera)
+      operacionBilletera("ingreso");
    }
 
    if (opcion == "2") {
-      // Todo el codigo a ejecutar si la opcion es 2 => Retiro
-      let descripcionRetiro = prompt("¿Cual es la descripcion del retiro?");
-      let montoRetiro = Number(prompt("¿Cual es el monto a retirar?"));
-
-      // Objeto literal Retiro
-      const retiro = {
-         descripcion: descripcionRetiro,
-         monto: montoRetiro,
-         tipo: "retiro"
-      }
-
-      billetera.push(retiro);
-      alert("Retiro realizado correctamente");
-      console.log(billetera)
+      operacionBilletera("retiro");
    }
 
    opcion = prompt(`¿Cual es la operacion que vas a realizar?
@@ -57,3 +30,26 @@ while (opcion !== "0") {
 }
 
 alert("Gracias por usar la billetera digital");
+
+
+function operacionBilletera(tipoOperacion) {
+   let descripcion = prompt("¿Cual es la descripcion de la operacion?").trim();
+   if (descripcion.length == 0) {
+      alert("Descripcion invalida");
+      return; // Detener la ejecucion de la funcion
+   }
+   let monto = Number(prompt("¿Cual es el monto de la operacion?"));
+   if (monto <= 0) {
+      alert("Monto invalido");
+      return;
+   }
+   // Vamos a crear un objeto literal
+   const operacion = {
+      descripcion: descripcion,
+      monto: monto,
+      tipo: tipoOperacion
+   }
+   billetera.push(operacion);
+   alert("Retiro realizado correctamente");
+   console.log(billetera)
+}
