@@ -9,6 +9,7 @@ const billetera = [];
 let opcion = prompt(`¿Cual es la operacion que vas a realizar?
    1- Ingresar dinero
    2- Retirar dinero
+   3- Sumar todos los ingresos
    0- Salir
    `)
 
@@ -21,9 +22,18 @@ while (opcion !== "0") {
       operacionBilletera("retiro");
    }
 
+   if (opcion == "3") {
+      /* COLOQUEN SU LOGICA */
+      /*Reduce */
+      const billeteraIngresos = billetera.filter(elmt => elmt.tipo === "ingreso");
+      const totalIngresos = billeteraIngresos.reduce((acum, elemt) => acum + elemt.monto, 0);
+      alert(`El total de ingresos es: $${totalIngresos}`);
+   }
+
    opcion = prompt(`¿Cual es la operacion que vas a realizar?
    1- Ingresar dinero
    2- Retirar dinero
+   3- Sumar todos los ingresos
    0- Salir
    `)
 
