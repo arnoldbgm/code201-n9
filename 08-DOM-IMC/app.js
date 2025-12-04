@@ -24,6 +24,7 @@
    o vamos a usarlos
 */
 
+let nombreInpt = document.getElementById("nombre");
 let pesoInpt = document.getElementById("peso");
 let estaturaInpt = document.getElementById("estatura");
 let limpiarBtn = document.getElementById("limpiar");
@@ -58,6 +59,8 @@ limpiarBtn.addEventListener("click", function(){
    */
    pesoInpt.value = "";
    estaturaInpt.value = "";
+   nombreInpt.value = "";
+   resultadoTxt.textContent = "";
 })
 
 //  2. Usar el metodo preventDefault() en el evento
