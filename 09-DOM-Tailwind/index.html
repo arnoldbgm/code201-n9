@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billetera App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 p-6">
+  <header class="mb-6">
+    <h1 class="text-2xl font-bold">Gestión de Movimientos</h1>
+    <p class="text-gray-600 text-sm">CRUD de ingresos y gastos</p>
+  </header>
+
+  <!-- FORMULARIO -->
+  <section class="bg-white p-6 rounded-2xl shadow mb-6">
+    <h2 class="text-lg font-semibold mb-4">Registrar Movimiento</h2>
+    <form id="formMovimiento" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Tipo</label>
+        <select id="tipo" class="w-full border p-2 rounded-lg">
+          <option value="Ingreso">Ingreso</option>
+          <option value="Gasto">Gasto</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Descripción</label>
+        <input id="descripcion" type="text" class="w-full border p-2 rounded-lg" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Monto</label>
+        <input id="monto" type="number" step="0.01" class="w-full border p-2 rounded-lg" />
+      </div>
+      <div class="md:col-span-3 flex justify-end">
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg">Guardar</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- TABLA CRUD -->
+  <section class="bg-white p-6 rounded-2xl shadow">
+    <h2 class="text-lg font-semibold mb-4">Lista de Movimientos</h2>
+    <table class="w-full table-auto border-collapse text-sm">
+      <thead>
+        <tr class="bg-gray-200 text-left">
+          <th class="p-2">Tipo</th>
+          <th class="p-2">Descripción</th>
+          <th class="p-2">Monto</th>
+          <th class="p-2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaMovimientos">
+        <!-- JS llenará esta grilla -->
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>
