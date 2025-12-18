@@ -1,4 +1,5 @@
 /*
+   0. Importaciones a librerias externas ó modulos (archivos)
    1. Captura Elementos del DOM - Crear variables 
 */
 
@@ -9,10 +10,11 @@ let btnGuardar = document.querySelector("#guardar");
 let totalMovimientos = document.querySelector("#totalMovimientos");
 let totalIngresos = document.querySelector("#totalIngresos");
 let tbMovimientos = document.querySelector("#tablaMovimientos");
+let btnActualizar = document.querySelector("#actualizar")
 
 const billetera = []; // Porque es un array? Porque vamos a guardar varios objetos dentro
 // Por que vacio? Porque al inicio no tenemos ningun gasto o ingreso registrado
-
+let editarIndice = null;
 /*
    2. Creacion de eventos
 */
@@ -55,11 +57,27 @@ btnGuardar.addEventListener("click", function (event) {
    limpirValores();
    contarMovimientos();
    calcularIngresos();
-
-   /*
-      Renderizado de las filas dentro del tbody
-   */
    renderizarTabla();
+})
+
+btnActualizar.addEventListener("click", function(){
+   let tipo = selectTipo.value; 
+   let descripcion = inptDescripcion.value;
+   let monto = Number(inptMonto.value);
+
+   let operacion = {
+      tipo,
+      descripcion,
+      monto,
+   }
+
+   billetera[editarIndice] = operacion;
+   console.log(billetera);
+   limpirValores();
+   contarMovimientos();
+   calcularIngresos();
+   renderizarTabla();
+  
 })
 
 function limpirValores() {
@@ -97,10 +115,46 @@ function renderizarTabla() {
             <td class="py-3 px-4 text-slate-200">${elmt.descripcion}</td>
             <td class="py-3 px-4 text-emerald-400 font-medium">${elmt.monto}</td>
             <td class="py-3 px-4 space-x-2">
-               <button class="text-indigo-400 hover:text-indigo-300">Editar</button>
-               <button class="text-red-400 hover:text-red-300">Eliminar</button>
+               <button class="text-indigo-400 hover:text-indigo-300" onclick="editarMovimiento(${index})">Editar</button>
+               <button class="text-red-400 hover:text-red-300" onclick="eliminarMovimiento(${index})">Eliminar</button>
             </td>
          </tr>
       `
    })
+}
+
+function eliminarMovimiento(index) {
+   Swal.fire({
+      title: "¿Estas seguro de elimnar este movimiento?",
+      text: "Tu no podras revertir esto!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminarlo!"
+   }).then((result) => {
+      if (result.isConfirmed) {
+         Swal.fire({
+            title: "Elimnado!",
+            text: "Tu registro ha sido eliminado",
+            icon: "success"
+         });
+         billetera.splice(index, 1); // Eliminamos el elemento del array
+         console.log(billetera);
+         contarMovimientos();
+         calcularIngresos();
+         renderizarTabla();
+      }
+   });
+}
+
+function editarMovimiento(index) {
+   const mov = billetera[index];
+
+   selectTipo.value = mov.tipo;
+   inptDescripcion.value = mov.descripcion;
+   inptMonto.value = mov.monto;
+
+   editarIndice = index;
+   console.log(`El indice global es ${editarIndice}`);
 }
