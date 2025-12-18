@@ -8,6 +8,7 @@ let inptMonto = document.querySelector("#monto");
 let btnGuardar = document.querySelector("#guardar");
 let totalMovimientos = document.querySelector("#totalMovimientos");
 let totalIngresos = document.querySelector("#totalIngresos");
+let tbMovimientos = document.querySelector("#tablaMovimientos");
 
 const billetera = []; // Porque es un array? Porque vamos a guardar varios objetos dentro
 // Por que vacio? Porque al inicio no tenemos ningun gasto o ingreso registrado
@@ -54,6 +55,11 @@ btnGuardar.addEventListener("click", function (event) {
    limpirValores();
    contarMovimientos();
    calcularIngresos();
+
+   /*
+      Renderizado de las filas dentro del tbody
+   */
+   renderizarTabla();
 })
 
 function limpirValores() {
@@ -70,4 +76,31 @@ function calcularIngresos() {
    let ingresos = billetera.filter((elemnt) => elemnt.tipo === "Ingreso")
    let ingresosCalc = ingresos.reduce((acc, elmt) => acc + elmt.monto, 0);
    totalIngresos.textContent = ingresosCalc;
+   return ingresosCalc;
+}
+
+function renderizarTabla() {
+   /*
+   Crear o insertar un elemento desde JS
+   innerHTML => Permite insertar un elemento HTML dentro de otro
+*/
+   tbMovimientos.innerHTML = ""; // Limpiar el contenido del tbody
+
+   // Recorrer o manipular el array que contiene toda nuestra informacion
+   billetera.forEach((elmt, index) => {
+      // Aqui vamos a renderizar cada una de las filas
+      tbMovimientos.innerHTML += `
+         <tr class="border-b border-slate-700/50 hover:bg-slate-700/30">
+            <td class="py-3 px-4">
+               <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2 py-1 rounded">${elmt.tipo}</span>
+            </td>
+            <td class="py-3 px-4 text-slate-200">${elmt.descripcion}</td>
+            <td class="py-3 px-4 text-emerald-400 font-medium">${elmt.monto}</td>
+            <td class="py-3 px-4 space-x-2">
+               <button class="text-indigo-400 hover:text-indigo-300">Editar</button>
+               <button class="text-red-400 hover:text-red-300">Eliminar</button>
+            </td>
+         </tr>
+      `
+   })
 }
