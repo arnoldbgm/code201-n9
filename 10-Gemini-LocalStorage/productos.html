@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Productos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-white">Mis Productos</h1>
+            <a href="index.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition ease-in-out duration-150">
+                Registrar Nuevo Producto
+            </a>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Las tarjetas de productos se insertarán aquí mediante JavaScript -->
+            
+            <!-- Ejemplo de tarjeta de producto -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-5 transform hover:scale-105 transition-transform duration-200">
+                <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Producto de Ejemplo</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-1"><span class="font-medium">Precio:</span> $999.00</p>
+                <p class="text-gray-600 dark:text-gray-400"><span class="font-medium">Cantidad:</span> 25</p>
+            </div>
+            
+        </div>
+        
+        <div id="no-products-message" class="hidden mt-10 text-center">
+            <p class="text-gray-500 dark:text-gray-400 text-lg">Aún no has registrado ningún producto.</p>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
