@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Alumno - VibeCoding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar de Navegación -->
+        <aside class="w-64 flex-shrink-0 bg-white flex flex-col border-r">
+            <div class="p-6 flex items-center gap-3 border-b">
+                <div class="p-2 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">school</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">VibeCoding</h1>
+                    <p class="text-xs text-gray-500">Admin Escolar</p>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 py-4 space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </a>
+                <a href="matricula.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">person_add</span>
+                    <span class="text-sm">Matrícula</span>
+                </a>
+                <a href="asistencia.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span class="text-sm">Asistencia</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            <header class="h-16 flex items-center justify-between px-8 bg-white border-b sticky top-0">
+                <h2 class="text-xl font-bold tracking-tight">Perfil del Alumno</h2>
+                <a href="matricula.html" class="flex items-center gap-2 text-sm text-gray-600 hover:text-indigo-600">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    Volver a la lista
+                </a>
+            </header>
+
+            <div id="perfil-contenido" class="p-8 space-y-8">
+                <!-- Placeholder mientras cargan los datos -->
+                <div id="loading" class="text-center py-10">
+                    <p class="text-gray-500">Cargando perfil del alumno...</p>
+                </div>
+                
+                <!-- El contenido del perfil se insertará aquí -->
+
+            </div>
+        </main>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/alumno.js"></script>
+</body>
+
+</html>

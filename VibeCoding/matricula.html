@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrícula - VibeCoding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar de Navegación -->
+        <aside class="w-64 flex-shrink-0 bg-white flex flex-col border-r">
+            <div class="p-6 flex items-center gap-3 border-b">
+                <div class="p-2 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">school</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">VibeCoding</h1>
+                    <p class="text-xs text-gray-500">Admin Escolar</p>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 py-4 space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </a>
+                <a href="matricula.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 font-medium">
+                    <span class="material-symbols-outlined">person_add</span>
+                    <span class="text-sm">Matrícula</span>
+                </a>
+                <a href="asistencia.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span class="text-sm">Asistencia</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            <header class="h-16 flex items-center justify-between px-8 bg-white border-b sticky top-0">
+                <h2 class="text-xl font-bold tracking-tight">Registro de Matrícula</h2>
+            </header>
+
+            <div class="p-8 space-y-8">
+                <!-- Formulario de Matrícula -->
+                <section class="bg-white rounded-xl border border-gray-200 shadow-sm">
+                    <div class="p-6 border-b">
+                        <h3 class="text-lg font-bold">Registrar Nuevo Alumno</h3>
+                    </div>
+                    <div class="p-6">
+                        <form id="matricula-form" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <label class="flex flex-col gap-2">
+                                <span class="text-sm font-semibold text-gray-700">Nombres</span>
+                                <input name="nombres" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20" placeholder="Ej: Juan" type="text" required />
+                            </label>
+                            <label class="flex flex-col gap-2">
+                                <span class="text-sm font-semibold text-gray-700">Apellidos</span>
+                                <input name="apellidos" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20" placeholder="Ej: Pérez" type="text" required />
+                            </label>
+                             <label class="flex flex-col gap-2">
+                                <span class="text-sm font-semibold text-gray-700">Grado</span>
+                                <select name="grado" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20" required>
+                                    <option value="">Seleccionar Grado</option>
+                                    <option>1er Grado</option>
+                                    <option>2do Grado</option>
+                                    <option>3er Grado</option>
+                                    <option>4to Grado</option>
+                                    <option>5to Grado</option>
+                                </select>
+                            </label>
+                            <label class="flex flex-col gap-2">
+                                <span class="text-sm font-semibold text-gray-700">Sección</span>
+                                <select name="seccion" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20" required>
+                                    <option value="">Seleccionar Sección</option>
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                </select>
+                            </label>
+                            <label class="flex flex-col gap-2">
+                                <span class="text-sm font-semibold text-gray-700">Apoderado</span>
+                                <input name="apoderado" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20" placeholder="Nombre del apoderado" type="text" required />
+                            </label>
+                            <label class="flex flex-col gap-2">
+                                <span class="text-sm font-semibold text-gray-700">Teléfono</span>
+                                <input name="telefono" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20" placeholder="Ej: 987654321" type="tel" required />
+                            </label>
+                            <div class="lg:col-span-3 flex justify-end gap-3 mt-2">
+                                <button type="submit" class="px-8 py-3 bg-indigo-600 text-white text-sm font-bold rounded-lg hover:bg-indigo-700 transition-all flex items-center gap-2">
+                                    <span class="material-symbols-outlined">how_to_reg</span>
+                                    Matricular Alumno
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Tabla de Alumnos Matriculados -->
+                <section class="bg-white rounded-xl border border-gray-200 shadow-sm">
+                    <div class="p-6 border-b">
+                        <h3 class="text-lg font-bold">Alumnos Matriculados</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase tracking-wider">Nombre Completo</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase tracking-wider">Grado y Sección</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase tracking-wider">Apoderado</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase tracking-wider">Teléfono</th>
+                                    <th class="px-6 py-4 text-xs font-bold text-gray-600 uppercase tracking-wider text-right">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="alumnos-table-body" class="divide-y divide-gray-200">
+                                <!-- Las filas de alumnos se insertarán aquí dinámicamente -->
+                                <tr id="no-alumnos-row">
+                                    <td colspan="5" class="text-center py-10 text-gray-500">
+                                        No hay alumnos registrados.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/matricula.js"></script>
+</body>
+
+</html>

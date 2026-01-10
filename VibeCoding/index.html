@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VibeCoding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar de Navegación -->
+        <aside class="w-64 flex-shrink-0 bg-white flex flex-col border-r">
+            <div class="p-6 flex items-center gap-3 border-b">
+                <div class="p-2 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">school</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">VibeCoding</h1>
+                    <p class="text-xs text-gray-500">Admin Escolar</p>
+                </div>
+            </div>
+            <nav class="flex-1 px-4 py-4 space-y-1">
+                <a href="index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-indigo-100 text-indigo-700 font-medium">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="text-sm">Dashboard</span>
+                </a>
+                <a href="matricula.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">person_add</span>
+                    <span class="text-sm">Matrícula</span>
+                </a>
+                <a href="asistencia.html" class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-100 font-medium transition-colors">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                    <span class="text-sm">Asistencia</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            <header class="h-16 flex items-center justify-between px-8 bg-white border-b sticky top-0">
+                <h2 class="text-xl font-bold tracking-tight">Dashboard</h2>
+            </header>
+
+            <div class="p-8 space-y-8">
+                <!-- Sección de Métricas -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div id="card-total-alumnos" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-500 text-sm font-medium">Total de Alumnos</p>
+                            <span class="material-symbols-outlined text-indigo-600 bg-indigo-100 p-2 rounded-lg">groups</span>
+                        </div>
+                        <p class="text-3xl font-bold">0</p>
+                    </div>
+                    <div id="card-asistencia-hoy" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-500 text-sm font-medium">Asistencia de Hoy (%)</p>
+                            <span class="material-symbols-outlined text-indigo-600 bg-indigo-100 p-2 rounded-lg">check_circle</span>
+                        </div>
+                        <p class="text-3xl font-bold">0%</p>
+                    </div>
+                    <div id="card-ausentes-hoy" class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <p class="text-gray-500 text-sm font-medium">Alumnos Ausentes</p>
+                            <span class="material-symbols-outlined text-indigo-600 bg-indigo-100 p-2 rounded-lg">person_off</span>
+                        </div>
+                        <p class="text-3xl font-bold">0</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder para Gráfico -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm">
+                    <div class="p-6 border-b">
+                        <h3 class="text-lg font-bold">Gráfico (Placeholder)</h3>
+                    </div>
+                    <div class="p-8 flex items-center justify-center bg-gray-50 h-64">
+                        <p class="text-gray-500">Un gráfico de asistencia se mostrará aquí.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
