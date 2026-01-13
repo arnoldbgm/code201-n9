@@ -32,7 +32,11 @@ let inptProductPrice = document.querySelector("#product-price");
 let inptProductQuantiy = document.querySelector("#product-quantity");
 let btnGuardar = document.querySelector("#guardar")
 
-let almacen = []
+/* Obtener informacion del LocalStorage */
+/*
+   JSON.parse(localStorage.getItem("KEY"))
+*/
+let almacen = JSON.parse(localStorage.getItem("mini-bd")) || []
 
 /* 2. Eventos */
 btnGuardar.addEventListener("click", function (event) {
@@ -53,5 +57,7 @@ btnGuardar.addEventListener("click", function (event) {
    // Guardando la informacion en el localStorage
    localStorage.setItem("mini-bd", JSON.stringify(almacen))
    
-   console.log(producto);
+   inptProductName.value = ""
+   inptProductPrice.value = ""
+   inptProductQuantiy.value = ""
 })
